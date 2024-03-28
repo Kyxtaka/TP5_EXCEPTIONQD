@@ -53,6 +53,28 @@ class AppWeekEnd {
 		}
     }
 
+	public void menuPersonne() {
+		boolean commande_faite = false;
+		System.out.println("╭─────────────╮");
+        System.out.println("│ Menu amis!  │");
+        System.out.println("|─────────────|");
+		System.out.println("| L : liste   |");
+        System.out.println("│ Q : Quitter │");
+        System.out.println("╰─────────────╯");
+		while(!commande_faite) {
+			String commande_brute = System.console().readLine();
+			String commande = commande_brute.strip().toLowerCase();
+			if(commande.equals("l")) {
+				System.out.println(we.getAmis());
+				commande_faite = true;
+			}else if(commande.equals("q")) {
+				quitter = true;
+				commande_faite = true;
+			}else {
+				System.out.println("Commande '" + commande_brute + "' invalide.");
+			}
+		}
+	}
     /// Affiche un message de bienvenue
     public void bienvenue() {
 		System.out.println("╭────────────────────────────────────────────────────────────────────────────────────╮");
